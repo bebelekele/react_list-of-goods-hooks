@@ -116,12 +116,13 @@ export const App: React.FC = () => {
       </div>
 
       <ul>
-        <ul>
-          {goods.map<JSX.Element>(function (good: string) {
-            // eslint-disable-next-line react/jsx-key
-            return <li data-cy="Good">{good}</li>;
-          })}
-        </ul>
+        {goods.map<JSX.Element>(function (good: string, i: number) {
+          return (
+            <li data-cy="Good" key={i}>
+              {good}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
